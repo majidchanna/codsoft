@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>
+            LANDING PAGE
+        </title>
+        <style>
+            .header{
+                background-color: rgb(0, 0, 0);
+                color: white;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                height: 110px;
+            }
+            .body{
+                background-color: #18012b;
+                height: 550px;
+                color: white;
+                text-align: center;
+            }
+            .footer{
+                background-color: #ABC4AB;
+                height: 130;
+            }
+            #contact {
+            display: none;
+            }
+            #servics{
+                display: none;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="header">
+        <h1 style="text-align: center;">LANDING PAGE</h1>
+        <section style="text-indent: 70%;">  
+            <a href="LANDING PAGE TASK 2 (2).html"><input style="border-radius: 60px; background-color: cadetblue;" type="button" value="HOME" onclick="appendToscreen('HOME')"></a>
+            <a href="PORTFOLIO TASK 1.html"><input style="border-radius: 60px; background-color: cadetblue;"  type="button" value="PORTFOLIO" onclick="appendToscreen('PORTFOLIO')"></a>
+            <input style="border-radius: 60px; background-color: cadetblue;"  type="button" value="CONTACTS" onclick="toggleText()"></a>
+            <input style="border-radius: 60px; background-color: cadetblue;"  type="button" value="SERVICES" onclick="appendToscreen('SERVICES')"></a>
+     </section>
+    </div>
+        <div class="body">
+            <br>
+            <br>
+            <img src="profile.png" height="250">
+            <h1><b>MAJID ALI CHANNA</b></h1>
+           <p>web developer & intern at CODSOFT</p>
+           <p>BS COMPUTER SCIENCE (QUEST, Nawabshah)</p>
+           <br><br>
+           </marquee><p id="contact"><b>EMAIL:</b> majidchanna208@gmail.com</p>
+        </div>
+        <div class="footer">
+            <br>
+            <br>
+            <a href="https://www.linkedin.com/in/majid-ali-channa-581a7a2a5/" target="_blank"><img src="linkdin.png" height="25" alt="linkedin "></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/majidali.channa.58958" target="_blank"><img src="facebook.png" height="25" alt="facebook"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/majidali1328/" target="_blank"><img src="instagram.png" height="25" alt="instagram"></a>
+             &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"><img src="gmail.png" height="25" alt="gmail"></a>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@majidchanna208@gmail.com 
+             <script>
+                function toggleText() {
+                  var text = document.getElementById("contact");
+                  if (text.style.display === "none") {
+                    text.style.display = "block";
+                  } else {
+                    text.style.display = "none";
+                  }
+                  
+                }
+              </script>
+            </div>
+    </body>
+</html>        
