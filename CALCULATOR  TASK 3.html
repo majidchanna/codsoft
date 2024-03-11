@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #d38f8f;
+            border-radius: 5px;
+            background-color: #285e1d;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            width: 23%;
+            padding: 10px;
+            margin: 1%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #fff;
+        }
+        input[type="button"]:hover {
+            background-color: #f0f0f0;
+        }
+        #result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="screen" readonly>
+        <div>
+            <input type="button" value="7" onclick="appendToScreen('7')">
+            <input type="button" value="8" onclick="appendToScreen('8')">
+            <input type="button" value="9" onclick="appendToScreen('9')">
+        
+        </div>
+        <div>
+            <input type="button" value="4" onclick="appendToScreen('4')">
+            <input type="button" value="5" onclick="appendToScreen('5')">
+            <input type="button" value="6" onclick="appendToScreen('6')">
+            
+        </div>
+        <div>
+            <input type="button" value="1" onclick="appendToScreen('1')">
+            <input type="button" value="2" onclick="appendToScreen('2')">
+            <input type="button" value="3" onclick="appendToScreen('3')">
+            
+        </div>
+        <div>
+            <input type="button" value="0" onclick="appendToScreen('0')">
+            <input type="button" value="00" onclick="appendToScreen('00')">
+            <input type="button" value="." onclick="appendToScreen('.')">
+        </div>
+        <div>
+            <input type="button" value="+" onclick="appendToScreen('+')">
+            <input type="button" value="/" onclick="appendToScreen('/')">
+            <input type="button" value="-" onclick="appendToScreen('-')">
+        
+        </div>
+        <div>
+            <input type="button" value="*" onclick="appendToScreen('*')">
+            <input type="button" value="<--" onclick="backspace()">
+            <input type="button" value="=" onclick="calculate()">
+        </div>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function appendToScreen(value) {
+            document.getElementById('screen').value += value;
+        } 
+        function backspace() {
+            var display = document.getElementById('screen');
+            display.value = display.value.slice(0, -1);
+        }
+        function calculate() {
+            let expression = document.getElementById('screen').value;
+            let result;
+            try {
+                result = eval(expression);
+                if (!isFinite(result)) {
+                    throw new Error('Invalid expression');
+                }
+            } catch (error) {
+                result = 'Error';
+            }
+            document.getElementById('result').innerText = 'Result: ' + result;
+        }
+    </script>
+</body>
+</html>
